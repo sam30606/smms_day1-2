@@ -1,16 +1,21 @@
 import { ApiProperty } from '@nestjs/swagger';
 export class FromBody {
-  @ApiProperty()
+  @ApiProperty({ description: 'number', example: 1, required: false })
   num: number;
 }
 export class FromHeaders {
-  name: 'From';
+  @ApiProperty({ description: 'Access token', required: false })
+  token: string;
 }
 export class FromParams {
-  @ApiProperty({example:1})
+  @ApiProperty({ description: 'number', example: 1 })
   num: number;
 }
 export class FromQuerys {
-  @ApiProperty({example:1})
+  @ApiProperty({ description: 'number', example: 1 })
+  num: number;
+}
+export class OkResponse {
+  @ApiProperty({ example: 2 })
   num: number;
 }
